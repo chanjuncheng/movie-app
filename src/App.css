@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+body {
+  background-color: rgb(10, 10, 10);
+  font-family: 'Merriweather', serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/**************************
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+Header css
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+**************************/
+
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1em;
+}
+
+.netflix-logo {
+  height: 70px;
+}
+
+.netflix-logo:hover {
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 0.5;
+  margin: 0 2em 0 10em;
+  height: 50px;
+  transform: scale(0.85);
+  color: rgb(80, 80, 80);
+}
+
+.search-input {
+  font-size: inherit;
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #777;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #777;
+  padding: 0 1em;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  background-color: rgb(211, 211, 211);
+}
+
+
+
+
+
+/**************************
+
+Movie css
+
+**************************/
+
+.movie-grid {
+  display: grid;
+  align-items: center;
+  justify-self: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.movie {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  margin: 0;
+  max-width: 400px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-img {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-info {
+  background-color: rgb(10, 10, 10);
+  margin: 0;
+  padding-top: 0.5em;
+  transition: transform .2s;
+  max-width: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-info:hover {
+  transform: scale(1.05);
+}
+
+.movie-info:hover .movie-summary {
+  transform: translateY(0%);
+}
+
+.movie-summary {
+  font-size: 0.65rem;
+  line-height: 1.6;
+  position: absolute;
+  bottom: 0;
+  padding: 1.5em;
+  background-color: rgb(10, 10, 10);
+  color: white;
+  transform: translateY(100%);
+  overflow: auto;
+  max-height: 85%;
+  transition: transform .2s;
+}
+
+
+
+/**************************
+
+Footer css
+
+**************************/
+
+.footer {
+  display: flex;
+}
+
+.page-form {
+  margin: 0 0 2em 1.75em;
+}
+
+.page-input {
+  height: 30px;
+  margin-right: 0.5em;
+}
+
+.page-btn {
+  padding: 0.65em 1.8em;
+  cursor: pointer;
+  background: linear-gradient(to left, #ff713b, #ffa51d);
+  color: white;
+}
+
+.page-btn:hover {
+  color: black;
 }
