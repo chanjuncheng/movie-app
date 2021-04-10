@@ -3,6 +3,7 @@ import logo from "../images/logo.png"
 import search from "../images/search.png"
 import axios from "axios"
 import {MovieContext} from "../context/MovieContext"
+import {useAuth0} from "@auth0/auth0-react"
 
 function Header({setMovies, setFeatured, setPages}) {
 
@@ -10,6 +11,7 @@ function Header({setMovies, setFeatured, setPages}) {
     const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?api_key=4d4c958db9e1bbd812b389bf4ed3d98c"
     const [query, setQuery] = useContext(MovieContext)
     const queryRef = useRef()
+    const {loginWithRedirect, logout, isAuthenticated} = useAuth0()
 
     function handleChange(e) {
         setQuery(e.value)
@@ -43,6 +45,11 @@ function Header({setMovies, setFeatured, setPages}) {
                     <img src={search} alt="search button"/>
                 </button>
             </form>
+            {
+                isAuthenticated ? 
+                    <button className="logout-btn" onClick={() => logout()}>Log Out</button>: 
+                    <button className="login-btn" onClick={() => loginWithRedirect()}>Log In</button>
+            }
         </div>
     )
 }

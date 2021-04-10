@@ -23,11 +23,11 @@ function App() {
 
   return (
     <MovieProvider>
-      <div>
+      <>
         <Header setMovies={setMovies} setFeatured={setFeatured} setPages={setPages}/>
         <MovieList movies={movies}/>
         <Footer setMovies={setMovies} pages={pages} featured={featured}/>
-      </div>
+      </>
     </MovieProvider>
   );
 }

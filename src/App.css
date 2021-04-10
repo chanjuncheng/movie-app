@@ -15,6 +15,7 @@ Header css
   display: flex;
   align-items: center;
   padding: 1em;
+  align-content: space-between;
 }
 
 .netflix-logo {
@@ -27,9 +28,10 @@ Header css
 
 .search-bar {
   display: flex;
-  flex-grow: 0.5;
+  /* flex-grow: 1; */
   margin: 0 2em 0 10em;
   height: 50px;
+  width: 900px;
   transform: scale(0.85);
   color: rgb(80, 80, 80);
 }
@@ -55,9 +57,29 @@ Header css
   background-color: rgb(211, 211, 211);
 }
 
+.login-btn, .logout-btn {
+  margin: 0 2em 0 10em;
+  height: 50px;
+  width: 150px;
+  transform: scale(0.85);
+  margin-left: auto;
+  cursor: pointer;
+  background: rgb(10, 10, 10);
+}
 
+.login-btn {
+  color: rgb(75, 204, 155);
+  border: 2px solid rgb(75, 204, 155);
+}
 
+.logout-btn {
+  color: #cecd24;
+  border: 2px solid #cecd24;
+}
 
+.login-btn:hover, .logout-btn:hover {
+  background: rgb(36, 35, 35);
+}
 
 /**************************
 
